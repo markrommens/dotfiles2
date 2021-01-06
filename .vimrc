@@ -41,6 +41,8 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
+set backspace=indent,eol,start
+
 "Set default search highlighting ON
 :set hlsearch
 :set incsearch
@@ -57,12 +59,33 @@ set statusline+=\
 set listchars=tab:→\ ,eol:↲
 
 " Tabulation settings 
+
+" Use spaces instead of tabs
+set expandtab
+"set noexpandtab
+
+" 1 tab = 4 spaces
 set tabstop=4 
 set softtabstop=4 
 set shiftwidth=4 
-"set expandtab
-set noexpandtab
 "set foldmethod=syntax
 set autoindent
 set list
+
+"######################################################################
+"# Splits and Tabbed Files
+"######################################################################
+set splitbelow splitright
+
+set path+=**                     " Searches current directory recursively
+set wildmenu                     " Display all matches when tab complete
+
+"######################################################################
+" Colors
+"######################################################################
+highlight LineNr          ctermfg=8   ctermbg=none cterm=none
+highlight CursorLineNr    ctermfg=7   ctermbg=8    cterm=none
+highlight VertSplit       ctermfg=0   ctermbg=8   cterm=none
+
+
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
