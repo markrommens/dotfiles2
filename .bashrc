@@ -18,7 +18,7 @@ alias dir='dir --color=auto'
 fi
 
 export GOPATH=$HOME/gopath
-export PATH=$GOPATH:$GOPATH/bin:$HOME/.local/bin:$PATH
+export PATH=$GOPATH:$GOPATH/bin:$HOME/.local/bin:$HOME/.local/bin/statusbar:$PATH;
 
 alias l='ls -CF'
 alias la='ls -A'

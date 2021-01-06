@@ -34,6 +34,6 @@ nitrogen --restore &
 #redshift -r -l 38.90:-77.16 &
 
 # dwmblocks
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/bin/statusbar:$PATH
 killall dwmblocks
 dwmblocks &

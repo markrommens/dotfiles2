@@ -26,6 +26,7 @@ bspc config gapless_monocle      true
 # Insertion scheme
 #bspc rule -a \* node=focused split_dir=east
 bspc config automatic_scheme	longest_side
+#bspc config focus_follows_pointer true
 
 ##################
 ## Window rules ##
@@ -66,24 +67,12 @@ pkill sxhkd
 sxhkd &
 
 # Reload compton
-pkill compton
+#pkill compton
 compton --config ~/.config/compton.conf &
-
-xrdb -merge ~/.Xresources &
-
-# Load bitmap fonts
-xset fp+ ~/.fonts &
-
-## Set keyboard settings - 250 ms delay and 25 cps repeat rate
-xset r rate 250 25 &
-
-## Turn off system beep
-xset b off &
-
-# Set the wallpaper
-nitrogen --restore &
-#feh --bg-fill ~/.wallpaper.jpg
 
 # Launch polybar
 $HOME/.config/polybar/launch.sh
 
+
+bspc subscribe node_add node_remove \
+        | grep -o --line-buffered '0x[0-9A-F]\+$' | xargs -n1 pidswallow &

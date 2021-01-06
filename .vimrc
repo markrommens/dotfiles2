@@ -15,8 +15,8 @@ syntax on
 filetype plugin indent on
 set t_Co=256
 "colorscheme nord
-colorscheme solarized8_flat
-"colorscheme gruvbox
+"colorscheme solarized8_flat
+colorscheme gruvbox
 "colorscheme xoria256
 set background=dark
 highlight Normal ctermfg=grey ctermbg=black
@@ -24,8 +24,7 @@ set textwidth=80
 set colorcolumn=+1
 set clipboard=unnamedplus
 
-set nu
-set rnu
+set nu rnu
 set laststatus=2
 set statusline=
 set statusline+=%#PmenuSel#
@@ -61,8 +60,9 @@ set listchars=tab:→\ ,eol:↲
 set tabstop=4 
 set softtabstop=4 
 set shiftwidth=4 
+"set expandtab
 set noexpandtab
 "set foldmethod=syntax
 set autoindent
-
+set list
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
